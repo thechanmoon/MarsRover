@@ -27,25 +27,11 @@ namespace MarsRover
             if(index > -1 && index < str_dir.Length)
             {
                 dir = str_dir[(index-1+str_dir.Length)%str_dir.Length];
-            }    
-            // switch (dir)
-            // {
-            //     case "N":
-            //         dir = "W";
-            //         break;
-            //     case "W":
-            //         dir = "S";
-            //         break;
-            //     case "S":
-            //         dir = "E";
-            //         break;
-            //     case "E":
-            //         dir = "N";
-            //         break;
-            //     default:
-            //         throw new ArgumentException();
-            //         break;
-            // }
+            }
+            else
+            {
+                // throw new ArgumentException();  
+            }
         }
 
         public void TurnRight(){
@@ -53,27 +39,11 @@ namespace MarsRover
             if(index > -1 && index < str_dir.Length)
             {
                 dir = str_dir[(index+1)%str_dir.Length];
-            }   
-            // switch (dir)
-            // {
-            //     case "N":
-            //         dir = "E";
-            //         break;
-            //     case "E":
-            //         dir = "S";
-            //         break;
-            //     case "S":
-            //         dir = "W";
-            //         break;
-            //     case "W":
-            //         dir = "N";
-            //         break;
-
-
-            //     default:
-            //         throw new ArgumentException();
-            //         break;
-            // }
+            }
+            else
+            {
+                // throw new ArgumentException();  
+            }
         }
 
         public void Move()
@@ -97,7 +67,7 @@ namespace MarsRover
                         x = x +1;
                     break;
                 default:
-                    throw new ArgumentException();
+                    // throw new ArgumentException();
                     break;
             }
         }
@@ -109,7 +79,6 @@ namespace MarsRover
             for(int i = 0; i < messages.Length; i++){
                 switch (messages[i])
                 {
-                    
                     case 'L':
                         TurnLeft();
                         break;
@@ -120,7 +89,7 @@ namespace MarsRover
                         Move();
                         break;
                     default:
-                        throw new ArgumentException();
+                        // throw new ArgumentException();
                         break;
                 }
             }
